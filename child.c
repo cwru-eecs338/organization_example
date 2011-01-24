@@ -4,7 +4,7 @@
 // Function prototypes:
 void c1();
 void c2();
-void badchild();
+void badchild(int);
 
 void child(int number) {
     // Here we switch between behaviors
@@ -15,7 +15,7 @@ void child(int number) {
         case 1:
             c2();
         default:
-            badchild();
+            badchild(number);
     }
 }
 
@@ -26,17 +26,23 @@ void child(int number) {
 
 void c1() {
     printf("Hi, I'm Child #1!\n");
+    fflush(stdout);
     _exit(0);
 }
 
 void c2() {
+    // Use sleep to print in order
+    // (This is a hack that is not guaranteed to work,
+    //  we'll see better ways of doing this later)
     sleep(1);
     printf("Hi, I'm Child #2!\n");
+    fflush(stdout);
     _exit(0);
 }
 
-void badchild() {
-    sleep(2);
+void badchild(int n) {
+    sleep(n); // Use sleep to print in order
     printf("I'm not going to say my name!\n");
+    fflush(stdout);
     _exit(1);
 }
