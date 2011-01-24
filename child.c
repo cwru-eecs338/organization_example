@@ -7,6 +7,8 @@ void c2();
 void badchild();
 
 void child(int number) {
+    // Here we switch between behaviors
+    // given the child number
     switch(number) {
         case 0:
             c1();
@@ -21,6 +23,7 @@ void child(int number) {
 // and c2 below as one generalized
 // function. This is just for
 // illustration
+
 void c1() {
     printf("Hi, I'm Child #1!\n");
     _exit(0);
