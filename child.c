@@ -27,6 +27,9 @@ void child(int number) {
 void c1() {
     printf("Hi, I'm Child #1!\n");
     fflush(stdout);
+    // Use _exit() to terminate a child process,
+    // since exit() performs extra cleanup that
+    // should only be performed by the parent process
     _exit(0);
 }
 
