@@ -1,11 +1,11 @@
-// (System imports use angle brackets)
+// (System libraries use angle brackets)
 #include<stdio.h>
 #include<unistd.h>
 #include<wait.h>
 #include<stdlib.h>
-// Import the header file to use
+// Include the header file to use
 // the corresponding .c file
-// (Local imports use quotes)
+// (Local libraries use quotes)
 #include "child.h"
 
 int CHILDREN = 4;
