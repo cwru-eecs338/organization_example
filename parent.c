@@ -38,5 +38,5 @@ int main() {
     }
     printf("I have %d bad children.\n", failures);
 
-    return 0;
+    return EXIT_SUCCESS;
 }

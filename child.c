@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 #include<unistd.h>
 
 // Function prototypes:
@@ -30,7 +31,7 @@ void c1() {
     // Use _exit() to terminate a child process,
     // since exit() performs extra cleanup that
     // should only be performed by the parent process
-    _exit(0);
+    _exit(EXIT_SUCCESS);
 }
 
 void c2() {
@@ -40,12 +41,12 @@ void c2() {
     sleep(1);
     printf("Hi, I'm Child #2!\n");
     fflush(stdout);
-    _exit(0);
+    _exit(EXIT_SUCCESS);
 }
 
 void badchild(int n) {
     sleep(n); // Use sleep to print in order
     printf("I'm not going to say my name!\n");
     fflush(stdout);
-    _exit(1);
+    _exit(EXIT_FAILURE);
 }
